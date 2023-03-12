@@ -12,6 +12,7 @@ class MP3Download:
 	def __init__ (self, url):
 		self.url = url
 
+	# make download of the file 
 	def init(self):
 		video = YouTube(self.url)
 		audio = video.streams.filter(only_audio=True).order_by('abr').last()
