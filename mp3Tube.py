@@ -1,9 +1,10 @@
 
 #!/usr/bin/python
 
-from pytybe import YouTube
+from pytube import YouTube
 from moviepy.editor import *
 from sys import argv
+from os import system
 
 class MP3Download:
 
