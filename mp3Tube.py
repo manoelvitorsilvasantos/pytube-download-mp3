@@ -6,6 +6,7 @@ from moviepy.editor import *
 from sys import argv
 from os import system
 
+#classe para baixar música.
 class MP3Download:
 
 	def __init__ (self, url):
