@@ -1,25 +1,23 @@
-from mp3Tube import Mp3Download
-from mp4Tube import Mp4Download 
-
+#!/usr/bin/env python
+from mp3Tube import MP3Download
+from mp4Tube import MP4Download
+from sys import argv
+from os import *
 
 if __name__ == "__main__":
 	try:
-		param1 = argv[1]
-		try:
-			param2 = argv[2]
-		except:
-			print('./mp3Tube.py -choice <mp4/mp3> <url_youtube_video>')
-			try:
-				url = argv[3]
-				if param2 == 'mp3':
-					instance = Mp3Download(url)
-					print("Downloading file mp3...")
-					instance.init()
-				elif param2 == 'mp4':
-					instance = Mp4Download(url)
-					print("Downloading file mp4")
-					instance.init()
-			except:
-				print('./mp3Tube.py -choice <mp4/mp3> <url_youtube_video>')
+		opc = str(argv[1])
+		url = str(argv[2])
+		print(opc, url)
+		if opc == "-audio":
+			instance = MP3Download(url)
+			print("Downloading file mp3...")
+			instance.init()
+		elif opc == '-video':
+			instance = MP4Download(url)
+			print("Downloading file mp4")
+			instance.getDownload()
 	except ValueError:
-		print('./mp3Tube.py -choice <mp4/mp3> <url_youtube_video>')
+		print('./main.py -audio <url_youtube_video> - download mp3')
+		print('./main.py -video <url_youtube_video> - download mp4')
+
