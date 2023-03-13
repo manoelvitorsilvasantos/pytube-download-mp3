@@ -13,7 +13,6 @@ if __name__ == "__main__":
 
 		opc = str(argv[1])
 		url = str(argv[2])
-		param = str(argv[3])
 
 		if opc == "-audio": # baixar arquivo mp3
 			instance = MP3Download(url)
@@ -23,8 +22,6 @@ if __name__ == "__main__":
 			instance = MP4Download(url)
 			print("Downloading file mp4")
 			instance.getDownload()
-		elif opc == '-paudio': # baixar playlist mp3
-			print('Dont still finished.')
 	
 	except ValueError:
 		print('===================================================')
